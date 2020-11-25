@@ -15,4 +15,6 @@ The idea is quite simple :
 ## Install 
     cd /home/<your-user>/
     git clone <this repo url>
-    ./install.sh #(we'll see if I go that far...)
+    chmod +x ./install.sh
+    ./install.sh
+    reboot
