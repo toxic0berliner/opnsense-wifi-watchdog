@@ -5,7 +5,7 @@ The idea comes from an opnSense system I manage remotely but that is only connec
 ## Concept
 The idea is quite simple :
 
-- add a custom cron task that will run our script (inspired from [https://docs.opnsense.org/development/backend/configd.html|the official doc])
+- add a custom cron task that will run our script (inspired from [the official doc](https://docs.opnsense.org/development/backend/configd.html))
 - schedule that task to run every 5 minutes (using GUI)
 - have our script check the WIFI connection and try to fix it :
   1. check link status and IP
