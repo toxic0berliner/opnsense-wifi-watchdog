@@ -14,5 +14,5 @@ scriptdir=`dirname "${filename}"`
 pkg install bash
 
 mv $scriptdir/wifi-watchdog.sh /usr/local/bin/
-mv actions_wifi-watchdog.conf /usr/local/opnsense/service/conf/actions.d/
+mv $scriptdir/actions_wifi-watchdog.conf /usr/local/opnsense/service/conf/actions.d/
 
