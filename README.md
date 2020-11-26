@@ -22,12 +22,22 @@ Then in the GUI you should be able to ad a cron task selecting "Wifi watchdog" i
  - the matching interface name in the opnSense sense : something like opt3
  - the number of seconds to wait for an interface reconfigure to hopefully solve the link being down, after this wait if the interface is not up and connected the script will reboot the system. Typically 60 seconds is enought for what I see.
 
- ## Logs
- It's not realy clean as of now, but we generate 2 logfiles : ``/var/log/wifi_watchdog.log`` and ``/var/log/wifi_watchdog.log.uptime.csv``
+## Usage
+Look at the end of the install section to use it with the GUI.
+Logs are not integrated in GUI as of now.
+
+You can start the script manually like this : 
+
+    configctl wifiwatchdog update ath0_wlan1 opt3 60
+
+Looks like you don't even need to be root to do that and get the script executed by root nonetheless.
+
+## Logs
+It's not realy clean as of now, but we generate 2 logfiles : ``/var/log/wifi_watchdog.log`` and ``/var/log/wifi_watchdog.log.uptime.csv``
  
- The path of these logfiles can be changed in the script itself in ``/usr/local/bin/wifiwatchdog.sh``
+The path of these logfiles can be changed in the script itself in ``/usr/local/bin/wifiwatchdog.sh``
 
- You might want to make sure ``/var/log`` is not lost upon reboots if you want to keep your logs.
+You might want to make sure ``/var/log`` is not lost upon reboots if you want to keep your logs.
 
- @todo: rotate the logs at some point
- ==> Meanwhile, you need to clear the log files manually whenever you think is right to avoid filling your filesystem. I tried to not log too much but still wanted useful info for debug.
+@todo: rotate the logs at some point
+==> Meanwhile, you need to clear the log files manually whenever you think is right to avoid filling your filesystem. I tried to not log too much but still wanted useful info for debug.
