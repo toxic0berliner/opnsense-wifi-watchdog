@@ -17,3 +17,7 @@ The idea is quite simple :
     git clone <this repo url>
     chmod +x ./install.sh
     ./install.sh
+Then in the GUI you should be able to ad a cron task selecting "Wifi watchdog" in the command dropdown and giving it 3 parameters :
+ - the interface name as it show in ifconfig, should be something like ath0_wlan1
+ - the matching interface name in the opnSense sense : something like opt3
+ - the number of seconds to wait for an interface reconfigure to hopefully solve the link being down, after this wait if the interface is not up and connected the script will reboot the system. Typically 60 seconds is enought for what I see.

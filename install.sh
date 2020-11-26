@@ -26,5 +26,6 @@ echo "restarting the configd service"
 service configd restart
 
 echo "done."
+echo "You can now add a cron task in the GUI."
 
 
