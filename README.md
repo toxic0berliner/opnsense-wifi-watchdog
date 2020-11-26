@@ -17,4 +17,3 @@ The idea is quite simple :
     git clone <this repo url>
     chmod +x ./install.sh
     ./install.sh
-    reboot

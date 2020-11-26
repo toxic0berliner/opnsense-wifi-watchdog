@@ -22,6 +22,9 @@ echo "installing the cron task"
 mv $scriptdir/actions_wifiwatchdog.conf /usr/local/opnsense/service/conf/actions.d/
 chown root:wheel /usr/local/opnsense/service/conf/actions.d/actions_wifiwatchdog.conf
 
-echo "done. It seems a reboot is necessary for the cron action to show up in the GUI."
+echo "restarting the configd service"
+service configd restart
+
+echo "done."
 
 
