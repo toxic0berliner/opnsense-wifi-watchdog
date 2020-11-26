@@ -17,10 +17,12 @@ LOCKFD=99
 [ -z "$grace_period" ] && grace_period=60
 
 ## Insuring we run as root #######################################
-if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root" 
-	exit 1 
+if [ $(id -u) -ne 0 ]; then
+   echo "This script must be run as root"
+   exit 1;
 fi
+
+
 
 ## LOCKFILE ######################################################
 # PRIVATE
