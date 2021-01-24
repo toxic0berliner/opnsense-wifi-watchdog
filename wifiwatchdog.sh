@@ -133,7 +133,7 @@ perform_fix() {
 	log info "$ifname status before rebooting was '$linkstatus' with ip '$ipv4' netmask '$subnet'";
 	log info "rebooting to force the link to come up again";
 	ifconfig $ifname >> $logfile
-	echo $(date +"$dateformat")";"$(uptime) >> $uptimelogfile
+	echo $(date +"$dateformat")";"$(uptime| awk -F'( |,|:)+' '{d=h=m=0; if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}') >> $uptimelogfile
 	reboot;
 }
 
